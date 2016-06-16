@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 运行实例：
 
  ![这里写图片描述](images/2-4.png)
- 
+
 主要将表格中的方法应用到第一个EditText中，设置了初始显示文字和初始光标位置，并全选了全部内容，最后将EditText设置成不可编辑。
 实战演练：
 
@@ -259,9 +259,7 @@ public class DeleteEditText extends EditText {
 
 4. 除了设置了内容变化监听，还设置了焦点变化监听，控件获得焦点时，调用getText方法获取EditText中的内容，判断其长度决定清空图片的显示与否，失去焦点时隐藏清空图片。
 
-5. 在决定是否清空EditText的判断中，另辟蹊径，覆写了onTouchEvent方法，根据手指抬起时的位置是否在清空图片上间接判断是否点击了清空图片。这里用到了getWidth方法获取EditText的宽度，getPaddingRight获取了清空图片右侧距离EditText控件右侧的距离，getTotalPaddingRight获得了清空图片左侧距离EditText控件右侧的距离，并通过getWidth和getPaddingRight及getWidth和getTotalPaddingRight之差判断触摸事件是否发生在清空图片之上，来决定是否清空EditText中的内容。可以结合下面的图片理解：
-
-![这里写图片描述](images/2-5.png)
+5. 在决定是否清空EditText的判断中，另辟蹊径，覆写了onTouchEvent方法，根据手指抬起时的位置是否在清空图片上间接判断是否点击了清空图片。这里用到了getWidth方法获取EditText的宽度，getPaddingRight获取了清空图片右侧距离EditText控件右侧的距离，getTotalPaddingRight获得了清空图片左侧距离EditText控件右侧的距离，并通过getWidth和getPaddingRight及getWidth和getTotalPaddingRight之差判断触摸事件是否发生在清空图片之上，来决定是否清空EditText中的内容。
 
 运行实例，如下图：
 ![这里写图片描述](images/2-6.png)
